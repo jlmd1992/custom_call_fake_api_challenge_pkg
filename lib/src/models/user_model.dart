@@ -1,7 +1,7 @@
 import 'address_model.dart';
 import 'name_model.dart';
 
-/// Model for representing a user.
+/// Model for representing a user from Fake Store API.
 class User {
   final int id;
   final String email;

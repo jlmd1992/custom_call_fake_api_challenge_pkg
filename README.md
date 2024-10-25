@@ -9,7 +9,7 @@ This package allows queries to the Fake Store API to retrieve data such as produ
 - Immutable data models.
 - Example of use in a Flutter application.
 
-## Instalación
+## Installation
 
 To use this package in your Flutter project, add the following dependency to your `pubspec.yaml` file:
 
@@ -33,7 +33,6 @@ import 'package:custom_call_fake_api_challenge/custom_call_fake_api_challenge.da
 void main() async {
   final apiService = ApiService();
 
-  // Get products
   final products = await apiService.fetchProducts();
   products.fold(
     (error) => print('Error: ${error.message}'),

@@ -18,7 +18,7 @@ class ApiError {
   }
 }
 
-/// Error specific to API failures from the status code.
+/// Return an error specific to API failures from the status code.
 ApiError handleHttpError(int statusCode) {
   switch (statusCode) {
     case 400:

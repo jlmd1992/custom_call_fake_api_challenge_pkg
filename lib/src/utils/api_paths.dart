@@ -1,4 +1,6 @@
 /// [ApiPaths] class where the base path and the used endpoints are defined
+/// 
+/// the endpoints used are on [Fake API](https://fakestoreapi.com)
 class ApiPaths {
   /// Base URL of the Fake Store API.
   static const String baseUrl = 'https://fakestoreapi.com';

@@ -1,4 +1,4 @@
-/// Model for representing a geolocation.
+/// Model for representing a geolocation from Address model.
 class Geolocation {
   final String lat;
   final String long;

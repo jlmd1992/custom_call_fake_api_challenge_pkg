@@ -1,4 +1,4 @@
-/// Model for representing a product.
+/// Model for representing a product from Fake Store API.
 class Product {
   final int id;
   final String title;

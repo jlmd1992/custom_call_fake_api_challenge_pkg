@@ -6,6 +6,13 @@ import '../services/fake_api_service.dart';
 import '../utils/api_error.dart';
 
 /// Repository to consume Fake Store API data.
+/// 
+/// **StoreRepository** is a class that acts as an intermediary between the *ApiService*
+/// and the application. Its purpose is to make requests to get data from the
+/// API Fake Store and convert the responses into domain objects such as *Product*, *Category* and *User*.
+///
+/// This class facilitates the consumption of the API in an organised and structured way,
+/// delegating to *ApiService* the networking tasks and mapping the received data to specific models.
 class StoreRepository {
   final ApiService apiService;
 

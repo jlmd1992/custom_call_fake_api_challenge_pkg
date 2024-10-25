@@ -1,6 +1,6 @@
 import 'geolocation_model.dart';
 
-/// Model for representing a address.
+/// Model for representing a address from User model.
 class Address {
   final String city;
   final String street;

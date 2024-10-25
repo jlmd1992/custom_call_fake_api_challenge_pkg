@@ -1,4 +1,4 @@
-/// Model for representing a category.
+/// Model for representing a category from Fake Store API.
 class Category {
   final String name;
 

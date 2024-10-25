@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fake Store API Example'),
+        title: const Text('Fake Store API Example Package'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

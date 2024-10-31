@@ -23,23 +23,53 @@ class StoreRepository {
   /// 
   /// returns an [Either] which can be a [ApiError] on error or a list of [Product].
   Future<Either<ApiError, List<Product>>> getProducts() async {
-    final result = await apiService.fetchProducts();
-    return result.map((data) => data.map((product) => Product.fromJson(product)).toList());
+    try {
+      final Either<ApiError, List<dynamic>> result = await apiService.fetchProducts();
+      return result.fold(
+        (ApiError error) => Left<ApiError, List<Product>>(error),
+        (List<dynamic> products) {
+          final List<Product> productsModel = products.map((product) => Product.fromJson(product)).toList();
+          return Right<ApiError, List<Product>>(productsModel);
+        },
+      );
+    } catch (e) {
+      return Left(ApiError('Error parsing products data: ${e.toString()}'));
+    }    
   }
 
   /// Gets a list of categories from the Fake Store API.
   /// 
   /// returns an [Either] which can be a [ApiError] on error or a list of [Category].
   Future<Either<ApiError, List<Category>>> getCategories() async {
-    final result = await apiService.fetchCategories();
-    return result.map((data) => data.map((category) => Category.fromJson(category)).toList());
+    try {
+      final result = await apiService.fetchCategories();
+      return result.fold(
+        (ApiError error) => Left<ApiError, List<Category>>(error), 
+        (List<dynamic> categories) {
+          final List<Category> categoryModel = categories.map((category) => Category.fromJson(category)).toList();
+          return Right<ApiError, List<Category>>(categoryModel);
+        }
+      );
+    } catch (e) {
+      return Left(ApiError('Error parsing categories data: ${e.toString()}'));
+    }    
   }
 
   /// Gets a list of users from the Fake Store API.
   /// 
   /// returns an [Either] which can be a [ApiError] on error or a list of [User].
   Future<Either<ApiError, List<User>>> getUsers() async {
-    final result = await apiService.fetchUsers();
-    return result.map((data) => data.map((user) => User.fromJson(user)).toList());
+    try {
+      final result = await apiService.fetchUsers();
+      return result.fold(
+        (ApiError error) => Left<ApiError, List<User>>(error),
+        (List<dynamic> users) {
+          final List<User> usersModel = users.map((user) => User.fromJson(user)).toList();
+          return Right<ApiError, List<User>>(usersModel);
+        },
+      );
+    } catch (e) {
+      return Left(ApiError('Error parsing users data: ${e.toString()}'));
+    }    
   }
 }

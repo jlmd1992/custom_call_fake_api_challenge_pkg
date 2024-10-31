@@ -1,7 +1,7 @@
 name: custom_call_fake_api_challenge
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "A Flutter package that allows consuming the Fake Store API to fetch data, provides services to fetch lists of products, categories and users with error handling."
+version: 1.0.1
+homepage: "https://github.com/jlmd1992/custom_call_fake_api_challenge_pkg"
 
 environment:
   sdk: ^3.5.3
